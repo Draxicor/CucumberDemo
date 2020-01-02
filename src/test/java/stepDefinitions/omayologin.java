@@ -14,6 +14,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 
@@ -21,11 +22,12 @@ import cucumber.api.java.en.When;
 @SuppressWarnings("deprecation")
 public class omayologin {
 	
-	WebDriver driver;
+	WebDriver driver=null;
 	
 	@Before("@Login")
 	public void setup() {
-		System.setProperty("webdriver.chrome.driver", "drivers//chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", "drivers//chromedriver.exe");
+		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);

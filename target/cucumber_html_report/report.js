@@ -1,101 +1,246 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:features/registration.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:features/omayologin.feature");
 formatter.feature({
-  "name": "Registration Tests",
+  "name": "Login to the omayo application",
   "description": "",
   "keyword": "Feature"
 });
-formatter.scenario({
-  "name": "Register an account with valid details",
+formatter.scenarioOutline({
+  "name": "User should only be able to login with valid credentials",
   "description": "",
-  "keyword": "Scenario",
+  "keyword": "Scenario Outline",
   "tags": [
     {
-      "name": "@qafox"
+      "name": "@All"
+    },
+    {
+      "name": "@Login"
     }
   ]
 });
 formatter.step({
-  "name": "User navigates to registration page",
+  "name": "I navigate to the omayo website",
   "keyword": "Given "
 });
-formatter.match({
-  "location": "Registration.user_navigates_to_registration_page()"
-});
-formatter.result({
-  "status": "passed"
+formatter.step({
+  "name": "I enter Username as \"\u003cusername\u003e\" and Password as \"\u003cpassword\u003e\" into the fields",
+  "keyword": "When "
 });
 formatter.step({
-  "name": "User provides the following details into the input fields",
+  "name": "I click on Login button",
+  "keyword": "And "
+});
+formatter.step({
+  "name": "User should login based on expected \"\u003cloginstatus\u003e\" status",
+  "keyword": "Then "
+});
+formatter.examples({
+  "name": "",
+  "description": "",
+  "keyword": "Examples",
   "rows": [
     {
       "cells": [
-        "firstName",
-        "kiko"
-      ]
-    },
-    {
-      "cells": [
-        "lastName",
-        "draxicor"
-      ]
-    },
-    {
-      "cells": [
-        "email",
-        "draxicor@gmail.com"
-      ]
-    },
-    {
-      "cells": [
-        "phone",
-        "12345678"
-      ]
-    },
-    {
-      "cells": [
+        "username",
         "password",
-        "SeleniumTester$"
+        "loginstatus"
+      ]
+    },
+    {
+      "cells": [
+        "arun",
+        "pswd1",
+        "failure"
+      ]
+    },
+    {
+      "cells": [
+        "SeleniumByArun",
+        "Test143$",
+        "success"
+      ]
+    },
+    {
+      "cells": [
+        "motoori",
+        "pswd2",
+        "failure"
       ]
     }
-  ],
+  ]
+});
+formatter.scenario({
+  "name": "User should only be able to login with valid credentials",
+  "description": "",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "name": "@All"
+    },
+    {
+      "name": "@Login"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I navigate to the omayo website",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "omayologin.I_navigate_to_the_omayo_website()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I enter Username as \"arun\" and Password as \"pswd1\" into the fields",
   "keyword": "When "
 });
 formatter.match({
-  "location": "Registration.user_provides_the_following_details_into_the_input_fields(DataTable)"
+  "location": "omayologin.I_enter_Username_as_and_Password_as(String,String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Selects the privacy policy option",
+  "name": "I click on Login button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "Registration.selects_the_privacy_policy_option()"
+  "location": "omayologin.I_click_on_Login_button()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Clicks on continue button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "Registration.clicks_on_continue_button()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User should get successfully regsitered",
+  "name": "User should login based on expected \"failure\" status",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "Registration.user_should_get_successfully_regsitered()"
+  "location": "omayologin.User_should_login_based_on_expected_status(String)"
 });
 formatter.result({
-  "error_message": "java.lang.AssertionError: User did not register succesfully\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat stepDefinitions.Registration.user_should_get_successfully_regsitered(Registration.java:62)\r\n\tat ✽.User should get successfully regsitered(file:features/registration.feature:13)\r\n",
-  "status": "failed"
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "User should only be able to login with valid credentials",
+  "description": "",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "name": "@All"
+    },
+    {
+      "name": "@Login"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I navigate to the omayo website",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "omayologin.I_navigate_to_the_omayo_website()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I enter Username as \"SeleniumByArun\" and Password as \"Test143$\" into the fields",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "omayologin.I_enter_Username_as_and_Password_as(String,String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I click on Login button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "omayologin.I_click_on_Login_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User should login based on expected \"success\" status",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "omayologin.User_should_login_based_on_expected_status(String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "User should only be able to login with valid credentials",
+  "description": "",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "name": "@All"
+    },
+    {
+      "name": "@Login"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I navigate to the omayo website",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "omayologin.I_navigate_to_the_omayo_website()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I enter Username as \"motoori\" and Password as \"pswd2\" into the fields",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "omayologin.I_enter_Username_as_and_Password_as(String,String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I click on Login button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "omayologin.I_click_on_Login_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User should login based on expected \"failure\" status",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "omayologin.User_should_login_based_on_expected_status(String)"
+});
+formatter.result({
+  "status": "passed"
 });
 formatter.after({
   "status": "passed"
